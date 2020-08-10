@@ -2,7 +2,7 @@ from tkinter import*
 import math
 import parser
 import tkinter.messagebox
-
+import webbrowser
 root = Tk()
 root.title("Scientific Calculator")
 root.configure(background="LightSteelBlue3")
@@ -292,6 +292,8 @@ def Standard():
     root.resizable(width=False, height=False)
     root.geometry("480x624+20+20")
 
+def helper():
+    webbrowser.open("https://www.youtube.com/channel/UCo-Cg3Vunenuc8naFWHiQVQ")
 
 menubar = Menu(calc)
 
@@ -302,6 +304,11 @@ filemenu.add_command(label = "Standadrd", command = Standard)
 filemenu.add_command(label = "Scientific", command = Scientific)
 filemenu.add_separator()
 filemenu.add_command(label = "Exit", command = iExit)
+
+helpmenu = Menu(menubar, tearoff=0)
+menubar.add_cascade(label = "Help", menu=helpmenu)
+helpmenu.add_command(label = "Info", command = helper)
+
 
 
 
